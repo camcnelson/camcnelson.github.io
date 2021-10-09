@@ -1,0 +1,13 @@
+@charset 'UTF-8';
+
+body {
+    font-family: 'Source Code Pro', monospace;
+}
+
+table {
+    width: auto;
+}
+
+th, td {
+    border: 1px solid black;
+}
