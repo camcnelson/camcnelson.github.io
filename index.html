@@ -7,17 +7,85 @@
 </head>
 <link href='index.css' rel='stylesheet' type='text/css'/>
 <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        background-color:white;
+        font-family: 'Source Code Pro', monospace;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    nav {
+        border-radius: 0;
+    }
+
+    .navbar-toggler:focus,
+    .navbar-toggler:active,
+    .navbar-toggler-icon:focus {
+        outline: none;
+    }
+
+    .card {
+        border-radius: 0;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .card:hover {
+        transform: scale(0.99);
+    }
+</style>
+
 <body>
 
-    <table>
-        <tr>
-            <td>Cell 1</td>
-            <td>Cell 2</td>
-        </tr>
-        <tr>
-            <td colspan='3'>Cell 3</td>
-        </tr>
-    </table>
+    <nav class="navbar navbar-expand-md navbar-light">
+		<button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav" style="background-color: white;">
+			<ul class="navbar-nav">
+				<li>
+					<a class="nav-link" href="#" style="color: black;">Home</a>
+				</li>
+                <li class="nav-item">
+					<a class="nav-link" href="#" style="color: black;">About</a>
+                </li>
+			</ul>
+		</div>
+	</nav>
+
+    <div class="container ml-0">
+		<div class="card-columns">
+
+            <a href="babylon.html">
+                <div class="card" id="">
+                    <div class="card-body">
+                        <h4 class="card-title">BabylonJS Testground</h4>
+                        <p class="card-text">Javascript, 3d</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="card" id="">
+                    <img class="card-img-top" src="images/zoetrope.jpg" style="width:100%; max-width:max-content;" class="d-block mx-auto">
+                    <div class="card-body">
+                        <h4 class="card-title">Zoetrope font</h4>
+                        <p class="card-text">OTF, TTF</p>
+                    </div>
+                </div>
+            </a>
+
+		</div>
+	</div>
 
 </body>
 </html>
