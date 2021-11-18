@@ -1,0 +1,102 @@
+
+body {
+	background: white;
+	color: gray;
+	font-family: 'Source Code Pro', monospace;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+div.container {
+	min-height: calc(100vh - 50px);
+	margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+nav {
+    border-radius: 0;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+}
+
+.card {
+    border-radius: 0;
+    border-color:darkgray;
+    transition: all 0.1s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(0.99);
+}
+
+.card-img-top {
+    width:100%;
+    max-width:max-content;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+p,h1,h2,h3,h4,h5,h6,a {
+	color: gray;
+	overflow-wrap: break-word;
+	text-decoration: none;
+  	word-wrap: break-word;
+}
+
+div.header {
+	border-bottom: 1px solid gray;
+	margin: 0 0 20px 0;
+	padding: 0;
+	text-align: left;
+	width: 100%;
+}
+
+div.footer {
+	border-top: 1px solid gray;
+	padding: 15px;
+	text-align: left;
+	width: 100%;
+	height: 50px;
+	bottom: 0;
+}
+
+ul.menubar {
+	margin: 0;
+	overflow: auto;
+	padding: 0;
+	white-space: nowrap;
+}
+
+ul.menubar li {
+    border-right: 1px solid gray;
+    display: inline-block;
+    justify-content: center;
+}
+
+ul.menubar li:last-child {
+    border-right: none;
+}
+
+ul.menubar li,h1{
+    color: gray;
+    display: inline-block;
+    padding: 0px 20px;
+    text-align: center;
+    -moz-transition:color .2s  ;
+    -o-transition:color .2s  ;
+    -webkit-transition:color .2s  ;
+}
+
+ul.menubar li a:hover {
+    color: black;
+}
