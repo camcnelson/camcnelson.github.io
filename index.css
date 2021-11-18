@@ -31,16 +31,17 @@ nav {
 
 .card {
     border-radius: 0;
-    border-color:darkgray;
-    transition: all 0.1s ease-in-out;
+    border: 1px solid darkgray;
+    transition: all 0.3s ease-in-out;
 }
 
 .card:hover {
-    transform: scale(0.99);
+    transform: scale(0.98);
 }
 
 .card-img-top {
     width:100%;
+	border-radius: 0;
     max-width:max-content;
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
