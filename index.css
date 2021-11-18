@@ -11,7 +11,7 @@ body {
 
 div.container {
 	min-height: calc(100vh - 50px);
-	margin: 0;
+	margin: 0; /*or auto if content should be centered*/
 }
 
 a {
@@ -31,12 +31,13 @@ nav {
 
 .card {
     border-radius: 0;
-    border: 1px solid darkgray;
-    transition: all 0.3s ease-in-out;
+    border: 1px solid gray;
+	transform: scale(0.99); /*seems to help pictures meet card borders*/
+	transition: all 0.3s ease-in-out;
 }
 
-.card:hover {
-    transform: scale(0.98);
+.clickable:hover {
+    transform: scale(0.95);
 }
 
 .card-img-top {
