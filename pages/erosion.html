@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='eng'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Heightfield Erosion</title>
+  <link href='../index.css' rel='stylesheet' type='text/css'/>
+  <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:200' rel='stylesheet'>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+</head>
+
+<body>
+
+  <div class='header'>
+    <ul class='menubar'>
+      <li><a href='../index.html'><h1>Home</h1></a></li>
+      <li><a href='../music.html'>Music</a></li>
+      <li><a href='../about.html'>About</a></li>
+      <li><a href='mailto:cn339@cornell.edu'>Contact</a></li>
+    </ul>
+  </div>
+
+<div class='main'>
+  <div class='article'>
+    <img style='height: 300px; object-fit: cover;' src='../images/erosion/after w mesh.jpg'/>
+    <h3>Erosion Algorithm</h3>
+    <p>This rudimentary erosion algorithm is based on a simplified sandpile model. Starting from pure Perlin noise, or in fact any monochrome bitmap heightfield, it continuously updates the heightfield array by moving terrain into neighboring pixels in the "downhill" direction. The frame below shows an instance of the algorithm actively evolving; refresh this page to restart the simulation. Bitmaps such as these are easily converted to more realistic 3d terrain meshes, which can be used to create more compelling virtual environments for renderings, games, or interactive applications.</p>
+    <a href='https://editor.p5js.org/cameron.nelson/embed/mphVkmGyI'>view P5.js sketch</a>
+  </div>
+</div>
+
+<div class='footer'>
+  <p id='copyright'></p>
+  <script>
+  (function getDate() {
+    var d = new Date();
+    document.getElementById('copyright').innerHTML = '&copy; ' + d;
+  })()
+  </script>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang='eng'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Zen Isovists</title>
+  <link href='../index.css' rel='stylesheet' type='text/css'/>
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet">
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+</head>
+
+<body>
+
+  <div class='header'>
+    <ul class='menubar'>
+      <li><a href='../index.html'><h1>Home</h1></a></li>
+      <li><a href='../music.html'>Music</a></li>
+      <li><a href='../about.html'>About</a></li>
+     <li><a href='mailto:cn339@cornell.edu'>Contact</a></li>
+    </ul>
+  </div>
+
+<div class='main'>
+  <div class='article'>
+    <h3>Zen Isovists</h3>
+    <p>The stone garden at <a style='text-decoration: underline; text-decoration-color: black;' href='https://en.wikipedia.org/wiki/Ry%C5%8Dan-ji' target='new' >Ryoanji</a>, a Zen Buddhist Temple in Kyoto,
+    is famous for the particular arrangement of its five clusters of stones: one
+    can never see all the stones in their entirety at once. Some part of the
+    scene is always obscured, no matter how hard one looks.
+    Regardless of whether the garden's creators intended this effect, it has fascinated me.
+    I wondered how one could set about to design a garden in
+    this way. To investigate, I created a program that randomly
+    generated other stone arrangements and checked them to
+    see if they satisfied this condition, producing valid examples by
+    brute force. To make this process more interactive, I created another program
+    for visualizing what are essentially inverse-isovists: regions
+    color-coded by how many stones can be seen at one time if
+    one stands within them. In the images shown here, the lightest regions are those from which all of the "stones" in the "garden" can be
+    seen in their entirety. With each darker shade, one more stone
+    is occluded. Notice how quickly they are hidden as we add two, three, then five stones.
+    Feel free to <a style='text-decoration: underline; text-decoration-color: black;' href='https://editor.p5js.org/cameron.nelson/embed/oPlNLk9dU' target='new'>play with it yourself.</a></p>
+    <img class='full' src='../images/ryoanji/2 obstacles.png'/>
+    <p>Two objects within a boundary...</p>
+    <img class='full' src='../images/ryoanji/3 obstacles.png'/>
+    <p>Three...</p>
+    <img class='full' src='../images/ryoanji/5 obstacles.png'/>
+    <p>And five. Note how quickly the distinct visibility regions have multiplied.</p>
+  </div>
+</div>
+
+<div class='footer'>
+  <p id='copyright'></p>
+  <script>
+  (function getDate() {
+    var d = new Date();
+    document.getElementById('copyright').innerHTML = '&copy; ' + d;
+  })()
+  </script>
+</div>
+
+</body>
+
+</html>

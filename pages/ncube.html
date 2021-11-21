@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='eng'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Hypercube Visualization</title>
+  <link href='../index.css' rel='stylesheet' type='text/css'/>
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet">
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <style type="text/css">
+      .mobileHide { display: inline;}
+      /* Smartphone Portrait and Landscape */
+      @media only screen
+      and (min-device-width : 320px)
+      and (max-device-width : 480px){ .mobileHide { display: none;}}
+  </style>
+  <style type="text/css">
+      .mobileShow { display: none;}
+      /* Smartphone Portrait and Landscape */
+      @media only screen
+      and (min-device-width : 320px)
+      and (max-device-width : 480px){ .mobileShow { display: inline;}}
+  </style>
+</head>
+
+<body>
+
+  <div class='header'>
+    <ul class='menubar'>
+      <li><a href='../index.html'><h1>Home</h1></a></li>
+      <li><a href='../music.html'>Music</a></li>
+      <li><a href='../about.html'>About</a></li>
+      <li><a href='mailto:cn339@cornell.edu'>Contact</a></li>
+    </ul>
+  </div>
+
+<div class='main'>
+  <div class='article'>
+
+    <div class='mobileHide'>
+      <div class='iframe-container'>
+          <iframe scrolling='no' frameborder='0' src='https://editor.p5js.org/cameron.nelson/embed/CFU5-lDFS'></iframe>
+      </div>
+    </div>
+    <div class='mobileShow'>
+        <img src='../images/ncube/pythonVersion.png' />
+    </div>
+
+    <h3>Hypercube Visualization</h3>
+    <p>This project was a Java-based simulation allowing one to visualize wireframe hypercubes—i.e., the equivalent of cubes in more than three dimensions.
+    The simulation asks for the user to input the number of dimensions, n. This could be any positive integer.
+    It then uses the mathematical definition of an n-cube to generate its vertices and edges in n-dimensional space.
+    To allow us to see the hypercube from any angle, a generalized n-dimensional rotation is performed.
+    Finally, the geometry is projected axonometrically into two dimensions before it is displayed to the screen.
+    </br></br>
+    This project was a chance for me to learn Java, and dates to before I did a lot of prototyping in nicer environments like Processing.
+    Seen here is a Python port of the code, showing a 5-dimensional hypercube.</p>
+  </div>
+</div>
+
+<div class='footer'>
+  <p id='copyright'></p>
+  <script>
+  (function getDate() {
+    var d = new Date();
+    document.getElementById('copyright').innerHTML = '&copy; ' + d;
+  })()
+  </script>
+</div>
+
+</body>
+
+</html>

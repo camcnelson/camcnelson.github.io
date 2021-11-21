@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='eng'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Weaver's Cabin</title>
+  <link href='../index.css' rel='stylesheet' type='text/css'/>
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet">
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+</head>
+
+<body>
+
+  <div class='header'>
+    <ul class='menubar'>
+      <li><a href='../index.html'><h1>Home</h1></a></li>
+      <li><a href='../music.html'>Music</a></li>
+      <li><a href='../about.html'>About</a></li>
+      <li><a href='mailto:cn339@cornell.edu'>Contact</a></li>
+    </ul>
+  </div>
+
+<div class='main'>
+  <div class='article'>
+    <h3>Weaver's Cabin</h3>
+    <img src='../images/weaver/parallel view.jpg'/>
+    <p>A simple house and studio, set in the woods of Greater New Haven County, Connecticut.
+        The program is to house an artist-in-residence half the year and a scholar the remainder of the time.
+        To serve the differing needs of the two occupants from day to day, swiveling panels make a wall switch from opaque to permeable at the touch of a hand.
+    A cloth drop-ceiling allows light to permeate through skylights without distracting the resident, just as do clerestory and crypto-porticus windows, for a suffusion of light despite optional views.
+    Simple furniture features a filleted-corner motif throughout the house, echoing the softness of the padded inner walls, each panel of which contains a suite of insulation against cold, fire, and the muffled sounds of a highway cut not far off from the forest preserve.
+    All this protection is wrapped in a canvas interior face that can be drawn on, replaced, tacked with artworks for viewing, or caressed.
+    </p>
+    <img src='../images/weaver/Albers line drawings.png'/>
+    <div class='gallery' style='margin:0px 0px 25px 0px;'>
+        <a data-fancybox='gallery' href='../images/weaver/chair.jpg'><img src='../images/weaver/chair.jpg' /></a>
+        <a data-fancybox='gallery' href='../images/weaver/desk left.jpg'><img src='../images/weaver/desk left.jpg' /></a>
+        <a data-fancybox='gallery' href='../images/weaver/kettle.jpg'><img src='../images/weaver/kettle.jpg' /></a>
+        <a data-fancybox='gallery' href='../images/weaver/sink.jpg'><img src='../images/weaver/sink.jpg' /></a>
+    </div>
+  </div>
+</div>
+
+<div class='footer'>
+  <p id='copyright'></p>
+  <script>
+  (function getDate() {
+    var d = new Date();
+    document.getElementById('copyright').innerHTML = '&copy; ' + d;
+  })()
+  </script>
+</div>
+
+</body>
+
+</html>

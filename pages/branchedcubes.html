@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang='eng'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Branched Cubes</title>
+  <link href='../index.css' rel='stylesheet' type='text/css'/>
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+</head>
+
+<body>
+
+  <div class='header'>
+    <ul class='menubar'>
+      <li><a href='../index.html'><h1>Home</h1></a></li>
+      <li><a href='../music.html'>Music</a></li>
+      <li><a href='../about.html'>About</a></li>
+      <li><a href='mailto:cn339@cornell.edu'>Contact</a></li>
+    </ul>
+  </div>
+
+<div class='main'>
+    <div class='gallery'>
+        <a data-fancybox='gallery' href='../images/branchedcubes/6 tiling.jpg'><img src='../images/branchedcubes/6 tiling.jpg' /></a>
+        <a data-fancybox='gallery' href='../images/branchedcubes/5 tiling.jpg'><img src='../images/branchedcubes/5 tiling.jpg' /></a>
+        <a data-fancybox='gallery' href='../images/branchedcubes/4-1 tiling.jpg'><img src='../images/branchedcubes/4-1 tiling.jpg' /></a>
+        <a data-fancybox='gallery' href='../images/branchedcubes/4-2 tiling.jpg'><img src='../images/branchedcubes/4-2 tiling.jpg' /></a>
+        <a data-fancybox='gallery' href='../images/branchedcubes/3-1 tiling.jpg'><img src='../images/branchedcubes/3-1 tiling.jpg' /></a>
+        <a data-fancybox='gallery' href='../images/branchedcubes/3-2 tiling.jpg'><img src='../images/branchedcubes/3-2 tiling.jpg' /></a>
+        <a data-fancybox='gallery' href='../images/branchedcubes/2 tiling.jpg'><img src='../images/branchedcubes/2 tiling.jpg' /></a>
+        <a data-fancybox='gallery' href='../images/branchedcubes/1 tiling.jpg'><img src='../images/branchedcubes/1 tiling.jpg' /></a>
+      <a data-fancybox='gallery' href='../images/branchedcubes/6 unit.jpg'><img src='../images/branchedcubes/6 unit.jpg' /></a>
+      <a data-fancybox='gallery' href='../images/branchedcubes/5 unit.jpg'><img src='../images/branchedcubes/5 unit.jpg' /></a>
+      <a data-fancybox='gallery' href='../images/branchedcubes/4-1 unit.jpg'><img src='../images/branchedcubes/4-1 unit.jpg' /></a>
+      <a data-fancybox='gallery' href='../images/branchedcubes/4-2 unit.jpg'><img src='../images/branchedcubes/4-2 unit.jpg' /></a>
+      <a data-fancybox='gallery' href='../images/branchedcubes/3-1 unit.jpg'><img src='../images/branchedcubes/3-1 unit.jpg' /></a>
+      <a data-fancybox='gallery' href='../images/branchedcubes/3-2 unit.jpg'><img src='../images/branchedcubes/3-2 unit.jpg' /></a>
+      <a data-fancybox='gallery' href='../images/branchedcubes/2 unit.jpg'><img src='../images/branchedcubes/2 unit.jpg' /></a>
+      <a data-fancybox='gallery' href='../images/branchedcubes/1 unit.jpg'><img src='../images/branchedcubes/1 unit.jpg' /></a>
+
+    </div>
+  <div class='gallery_description'>
+    <h3>Branched Cubes</h3>
+    While playing around with virtual blocks, I found out the following by construction:
+    If you take a cube, and any n of its six faces, and afix identical cubes to those faces, then the union of these cubes is a polyhedron that can be stacked to fill space without gaps or overlaps.
+    While coming up with a name for this kind of shape (I'll call them "branched cubes" for now), I came across <a href='https://circlesandtrianglesblog.wordpress.com/2016/06/06/three-dimensional-tessellation/'>this demonstration</a> of the case when n=6, with very nicely rendered animations of the assembly.
+    This result is interesting to me because Wikipedia's <a href='https://en.wikipedia.org/wiki/Honeycomb_(geometry)'>page on honeycombs</a> says of non-convex space-filling polyhedra that "documented examples are rare."
+    I think this must just be an oversight but either way, I find these shapes especially fascinating for the satisfying ways they interlock. Each unique kind of branched cube, up to symmetry, is shown here, as well as a 6x6x6 tiling.
+</div>
+</div>
+
+<div class='footer'>
+  <p id='copyright'></p>
+  <script>
+  (function getDate() {
+    var d = new Date();
+    document.getElementById('copyright').innerHTML = '&copy; ' + d;
+  })()
+  </script>
+</div>
+
+</body>
+
+</html>

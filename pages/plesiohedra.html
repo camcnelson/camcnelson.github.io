@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='eng'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Designing Plesiohedra</title>
+  <link href='../index.css' rel='stylesheet' type='text/css'/>
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet">
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+</head>
+
+<body>
+
+  <div class='header'>
+    <ul class='menubar'>
+      <li><a href='../index.html'><h1>Home</h1></a></li>
+      <li><a href='../music.html'>Music</a></li>
+      <li><a href='../about.html'>About</a></li>
+      <li><a href='mailto:cn339@cornell.edu'>Contact</a></li>
+    </ul>
+  </div>
+
+<div class='main'>
+  <div class='article'>
+      <h3>Designing Plesiohedra</h3>
+      <p>A plesiohedron, defined as the Voronoi cell of a symmetric Delone set, is by construction a polyhedron that tesselates space isohedrally, with each cell translationally symmetric to every other.
+      I parametrized this definition in Grasshopper design software, allowing me to sample arbitrary points from the phase space and even construct continuous trajectories through it. The animation shown here visualizes a point moving along such a path through the phase space. As such, if you were to freeze the animation, no matter what frame it stopped on, the polyhedron depicted would tile all of space.
+      This method is far from generating all possible polyhedra that can tile space, nor is the construction from a Delone set necessarily the only way to tile any particular plesiohedron. Take bricks, for example, which, when they are stacked in alternating rows, contain instances of exactly two edges meeting, unlike the Voronoi diagram of a Delone set whose edges always meet in three or more.
+      A point of further research will be aperiodic Delone sets, concave stereohedra, and exotic constructions of symmetric Delone sets.</p>
+    <img src='../images/plesiohedra/assembly.png'/>
+    <p>An assembly of space-filling plesiohedra</p>
+    <img src='../images/plesiohedra/plesiohedra.gif'/>
+    <p>A continuous walk through the parameter space of plesiohedra</p>
+
+  </div>
+</div>
+
+<div class='footer'>
+  <p id='copyright'></p>
+  <script>
+  (function getDate() {
+    var d = new Date();
+    document.getElementById('copyright').innerHTML = '&copy; ' + d;
+  })()
+  </script>
+</div>
+
+</body>
+
+</html>

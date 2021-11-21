@@ -5,6 +5,13 @@ class Gallery extends HTMLElement {
   
     connectedCallback() {
 
+        this.innerHTML = `
+        <div class='card-columns' id='gallery_header' style='column-count:1;'></div>
+        <div class='card-columns'>
+        <div id='gallery'></div>
+        </div>
+        `;
+
         var src = this.getAttribute('src');
         var title = this.getAttribute('title');
         var text = this.getAttribute('text');
@@ -42,13 +49,6 @@ class Gallery extends HTMLElement {
             });
             
         });
-
-        this.innerHTML = `
-        <div class='card-columns' id='gallery_header' style='column-count:1;'></div>
-        <div class='card-columns'>
-        <div id='gallery'></div>
-        </div>
-        `;
 
     }
   }
