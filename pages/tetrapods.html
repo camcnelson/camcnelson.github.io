@@ -7,52 +7,26 @@
 </head>
 <script src="/components/header.js" type="text/javascript" defer></script>
 <script src="/components/footer.js" type="text/javascript" defer></script>
+<script src="/components/gallery.js" type="text/javascript" defer></script>
 <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <link href='/index.css' rel='stylesheet' type='text/css'/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
 
 <body>
 
     <header-component></header-component>
+    
     <div class='container'>
-
-        <div class='card-columns'>
-            <div id='gallery'></div>
-        </div>
-        
-        <script type="text/javascript">
-            
-            $(document).ready(function() {
-                var folder = "/images/tetrapods";
-
-                $.ajax({
-                    url : folder,
-                    success: function (data) {
-                        $(data).find("a").attr("href", function (i, val) {
-                            if( val.match(/\.(jpe?g|png|gif)$/) ) {
-                                var card = `
-                                <div class='card'>
-                                <a data-fancybox='gallery' href='`+ val + `'>
-                                    <img class='card-img-top' src='`+ val + `'/>
-                                </a>
-                                </div>
-                                `;
-                                $("#gallery").append( card );
-                            }
-                        });
-                    }
-                });
-                
-            });
-
-        </script>
-        
+            <gallery-component src='/images/tetrapods' title='Tetrapods' 
+            text='These are 3d models of coastal breakwater armour units created in Rhinoceros 3d. 
+            They are based on industrial or military specificationss when available.
+            '></gallery-component>
     </div>
+
     <footer-component></footer-component>
 
 </body>

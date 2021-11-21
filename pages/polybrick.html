@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang = 'eng'>
+<meta charset='utf-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>Polybrick 2.0</title>
+</head>
+<script src="/components/header.js" type="text/javascript" defer></script>
+<script src="/components/footer.js" type="text/javascript" defer></script>
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<link href='/index.css' rel='stylesheet' type='text/css'/>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<body>
+
+  <header-component></header-component>
+  <div class="container page">
+
+    <div class='card'>
+      <div class='card-body'>
+        <h4 class='card-title'>Polybrick 2.0</h4>
+        <p class='card-text'>
+          Polybrick 2.0 is a project of Jenny Sabin Lab at Cornell University, focused on exploring ways to generate 3d forms mimicking trabecular bone at an intermediate scale. Speculative benefits of this porous geometry include improved strength-to-weight performance; greater inter-visibility and permeability; and its potential to be used as a scaffolding for other embedded materials.
+          Wolff’s Law posits that the spongy structure of human bone, while seemingly random, in fact is continually adapting to mechanical stresses. This is due to a form of topology optimization: bone becomes denser where stress is greatest, and more porous where stress is least, over time.
+          This project for Jenny Sabin Lab creates trabecular forms, then uses Finite Element Analysis and heuristic algorithms to mimic the way bones strengthen over time. The algorithms were based on evolutionary structural optimization algorithms and used Karamba and Millipede (both Grasshopper plugins) and C# scripting.
+          Part of this research was undertaken at Yale as independent coursework and presented as a research paper: “A Results-based Analysis of Heuristics for Progressive Improvement of Beams Structures.”
+          <a style='text-decoration: underline; text-decoration-color: black;' href='../images/polybrick/Bone-like Strain Adaptation.pdf' target='new'>See the full paper.</a>
+        </p>
+      </div>
+    </div>
+
+    <div class='card'>
+      <img class='card-image-top' src='../images/polybrick/bi arch.gif'/>
+      <div class='card-body'>
+        <p class='card-text'>
+          An animation of the bi-directional algorithm applied to a centrally loaded arch
+        </p>
+      </div>
+    </div>
+
+    <div class='card'>
+      <img class='card-image-top' src='../images/polybrick/sub arch model.jpg'/>
+      <div class='card-body'>
+        <p class='card-text'>
+          Subtractive algorithm output as isosurface
+        </p>
+      </div>
+    </div>
+
+    <div class='card'>
+      <img class='card-image-top' src='../images/polybrick/bi arch.jpg'/>
+      <div class='card-body'>
+        <p class='card-text'>
+          Change in stress levels in the frame elements over time
+        </p>
+      </div>  
+    </div>
+
+  </div>
+  <footer-component></footer-component>
+
+</body>
+
+</html>

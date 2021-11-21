@@ -9,21 +9,40 @@
 <script src="/components/footer.js" type="text/javascript" defer></script>
 <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <link href='/index.css' rel='stylesheet' type='text/css'/>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
 
 <body>
 
     <header-component></header-component>
-    <div class="container">
+    <div class="container" style='max-width: 100%;'>
 
         <div class="card-columns">
 
+            <a href="/pages/sg2018.html">
+                <div class="card clickable">
+                    <img class="card-img-top" src="images/sg2018/pointcloud.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">Smartgeometry</h4>
+                        <p class="card-text">Photogrammetry, VR</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="/pages/boolean.html">
+                <div class="card clickable">
+                    <img class="card-img-top" src="/images/boolean/12.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">BabylonJS Testground</h4>
+                        <p class="card-text">Javascript, 3d</p>
+                    </div>
+                </div>
+            </a>
+
             <a href="/pages/babylon.html">
                 <div class="card clickable">
-                    <img class="card-img-top" src="images/babylonjs.jpg" class="d-block mx-auto">
+                    <img class="card-img-top" src="images/babylon/babylonjs.jpg">
                     <div class="card-body">
                         <h4 class="card-title">BabylonJS Testground</h4>
                         <p class="card-text">Javascript, 3d</p>
@@ -33,7 +52,7 @@
 
             <a href="/pages/tetrapods.html">
                 <div class="card clickable">
-                    <img class="card-img-top" src="images/tetrapods/14.jpg" class="d-block mx-auto">
+                    <img class="card-img-top" src="images/tetrapods/14.jpg">
                     <div class="card-body">
                         <h4 class="card-title">Tetrapods</h4>
                         <p class="card-text">Rhinoceros 3d</p>
@@ -41,41 +60,42 @@
                 </div>
             </a>
 
-            <a href="#">
-                <div class="card">
-                    <img class="card-img-top" src="images/zoetrope.jpg" class="d-block mx-auto">
+            <a href="/pages/asphalt.html">
+                <div class="card clickable">
+                    <img class="card-img-top" src="images/asphalt/glyph16.png">
                     <div class="card-body">
-                        <h4 class="card-title">Zoetrope font</h4>
-                        <p class="card-text">OTF, TTF</p>
+                        <h4 class="card-title">Road Glyphs</h4>
+                        <p class="card-text">Photography</p>
                     </div>
                 </div>
             </a>
 
-            <a href="#">
-                <div class="card">
-                    <img class="card-img-top" src="images/SF2_Closing.gif" class="d-block mx-auto">
+            <a href="/pages/lossy.html">
+                <div class="card clickable">
+                    <img class="card-img-top" src="images/lossy/DCT.png">
                     <div class="card-body">
-                        <h4 class="card-title">Soil Factory</h4>
-                        <p class="card-text">Shaders, Touchdesigner</p>
+                        <h4 class="card-title">Lossy JPEG</h4>
+                        <p class="card-text">Javascript, JPEG</p>
                     </div>
                 </div>
             </a>
 
-            <a href="#">
-                <div class="card">
-                    <img class="card-img-top" src="images/SF2_Closing_tile.gif" class="d-block mx-auto">
+            <a href="/pages/folds.html">
+                <div class="card clickable">
+                    <img class="card-img-top" src="images/folds/23.png">
                     <div class="card-body">
-                        <h4 class="card-title">Soil Factory</h4>
-                        <p class="card-text">Shaders, Touchdesigner</p>
+                        <h4 class="card-title">No-sew Folds</h4>
+                        <p class="card-text">Rhinoceros 3d</p>
                     </div>
                 </div>
             </a>
 
-            <a href="#">
-                <div class="card">
+            <a href="/pages/polybrick.html">
+                <div class="card clickable">
+                    <img class="card-img-top" src="images/polybrick/sub arch model.jpg">
                     <div class="card-body">
-                        <h4 class="card-title">Just Text</h4>
-                        <p class="card-text">text description</p>
+                        <h4 class="card-title">Polybrick</h4>
+                        <p class="card-text">Topology Optimization</p>
                     </div>
                 </div>
             </a>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang = 'eng'>
+<meta charset='utf-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>Smartgeometry 2018</title>
+</head>
+<script src="/components/header.js" type="text/javascript" defer></script>
+<script src="/components/footer.js" type="text/javascript" defer></script>
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<link href='/index.css' rel='stylesheet' type='text/css'/>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<body>
+
+  <header-component></header-component>
+  <div class="container page">
+
+    <div class='card'>
+      <div class='card-body'>
+        <h4 class='card-title'>Data Mining the City</h4>
+        <p class='card-text'>
+          Led by Danil Nagy, Jim Stoddart, and Lorenzo Villagi of New York-based architecture firm "The Living," this workshop began with participants conducting psychogeographic “dérives” while wearing equipment for recording biosignatures, audio, and 360-degree video. These streams of data were used to create an intricate 3d reconstruction of the experience overlaid on a point cloud, using structure-from-motion algorithms in the open-source software COLMAP. A screenshot of one of these pointclouds is displayed at left.
+          Members divided into teams to investigate different lines of research. I was part of a team interested in the fact that moving objects, such as cars, people, dogs, or the like, are systematically overlooked by structure-from-motion, hence completely absent from the 3d reconstructions. We sought to reinsert these objects into the virtual model by using computer vision to locate and label such objects in the 2d frames of the video, then compare these with the orientation and depthmaps recovered by structure-from-motion.
+          The resulting virtual environment was made interactive through virtual reality.
+          This project proposes a new way, enabled by open-source technology, to make the dérives of the Situationists an experience that can be shared.
+        </p>    
+      </div>
+    </div>
+
+    <div class='card'>
+      <img class='card-image-top' src='/images/sg2018/pointcloud.jpg'/>
+      <div class='card-body'>
+        <p class='card-text'>
+          Model of a 5-minute walk
+        </p>
+      </div>
+    </div>
+
+    <div class='card'>
+      <img class='card-image-top' src='../images/sg2018/object_frames.png'/>
+      <div class='card-body'>
+        <p class='card-text'>Frames represent moving objects</p>
+      </div>
+    </div>
+
+    <div class='card'>
+      <img class='card-image-top' src='../images/sg2018/VR bw.png'/>
+      <div class='card-body'>
+        <p class='card-text'>Shane Burger experiments with the VR interface</p>
+      </div>
+    </div>
+
+  </div>
+  <footer-component></footer-component>
+
+</body>
+
+</html>
