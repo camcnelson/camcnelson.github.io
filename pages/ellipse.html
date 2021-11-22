@@ -1,73 +1,54 @@
 <!DOCTYPE html>
-<html lang='eng'>
+<html lang = 'eng'>
+<meta charset='utf-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <title>Ellipse Construction</title>
-  <link href='../index.css' rel='stylesheet' type='text/css'/>
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet">
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-  <style type="text/css">
-      .mobileHide { display: inline;}
-      /* Smartphone Portrait and Landscape */
-      @media only screen
-      and (min-device-width : 320px)
-      and (max-device-width : 480px){ .mobileHide { display: none;}}
-  </style>
-  <style type="text/css">
-      .mobileShow { display: none;}
-      /* Smartphone Portrait and Landscape */
-      @media only screen
-      and (min-device-width : 320px)
-      and (max-device-width : 480px){ .mobileShow { display: inline;}}
-  </style>
+    <title>Ellipse</title>
 </head>
+<script src="/components/header.js" type="text/javascript" defer></script>
+<script src="/components/footer.js" type="text/javascript" defer></script>
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<link href='/index.css' rel='stylesheet' type='text/css'/>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
 <body>
 
-  <div class='header'>
-    <ul class='menubar'>
-      <li><a href='../index.html'><h1>Home</h1></a></li>
-      <li><a href='../music.html'>Music</a></li>
-      <li><a href='../about.html'>About</a></li>
-      <li><a href='mailto:cn339@cornell.edu'>Contact</a></li>
-    </ul>
-  </div>
+  <header-component></header-component>
+  <div class="container page">
 
-<div class='main'>
-  <div class='article'>
-    <h3>Ellipse Construction</h3>
-    <p>As I was learning to draft by hand, and becoming frustrated with connect-the-dots approaches required to draw even simple circles in axonometric view, I began to dream of a tool for simplifying the process: an axonometric compass.
-    It would have to be adjustable according to the angle of the axonometry θ, the center point of the circle C, and that circle’s radius r.
-    I experimented with ways to reconstruct parallel-view circles from these pieces of information, and discovered that such circles are always true ellipses. Moreover, I invented a novel way to construct them, given the above quantities:</p>
+    <div class='card'>
+      <div class='card-body'>
+        <h3 class='card-title'>Ellipse Construction</h3>
+        <p class='card-text'>
+          As I was learning to draft by hand, and becoming frustrated with connect-the-dots approaches required to draw even simple circles in axonometric view, I began to dream of a tool for simplifying the process: an axonometric compass.
+          It would have to be adjustable according to the angle of the axonometry θ, the center point of the circle C, and that circle’s radius r.
+          I experimented with ways to reconstruct parallel-view circles from these pieces of information, and discovered that such circles are always true ellipses. Moreover, I invented a novel way to construct them, given the above quantities:
+        </p>
+      </div>
+    </div>
 
-    <img src='../images/ellipse/ellipse_construction.png'/>
+    <div class='card'>
+      <img class='card-img-top' src='/images/ellipse/ellipse_construction.png'/>
+      <div class='card-body'>
+        <p class='card-text'>1. Draw a point at C (cf.fig 1)</p>
+        <p class='card-text'>2. Draw a vertical line through it (cf. fig 2)</p>
+        <p class='card-text'>3. Draw a line through C at angle θ from the horizontal, extending a distance r in either direction (cf. fig 3)</p>
+        <p class='card-text'>4. From each of its endpoints, draw a horizontal line of length r back toward the vertical; let the distance that they overhang the vertical be called “s” (cf. fig 4)</p>
+        <p class='card-text'>5. Connect the open endpoints of the two horizontals with a line, and call this line “L” (cf. fig 5)</p>
+        <p class='card-text'>6. The circle, in axonometric view, is the locus of points p such that we can draw a line of length r from p to L that is divided by the vertical into segments of length r-s and s (cf. fig 6a-b)</p>
+      </div>
+    </div>
 
-    <p>1. Draw a point at C (cf.fig 1)</p>
-    <p>2. Draw a vertical line through it (cf. fig 2)</p>
-    <p>3. Draw a line through C at angle θ from the horizontal, extending a distance r in either direction (cf. fig 3)</p>
-    <p>4. From each of its endpoints, draw a horizontal line of length r back toward the vertical; let the distance that they overhang the vertical be called “s” (cf. fig 4)</p>
-    <p>5. Connect the open endpoints of the two horizontals with a line, and call this line “L” (cf. fig 5)</p>
-    <p>6. The circle, in axonometric view, is the locus of points p such that we can draw a line of length r from p to L that is divided by the vertical into segments of length r-s and s (cf. fig 6a-b)</p>
-
-    <div class='mobileHide'>
-    <div class='iframe-container'>
+    <div class='card'>
+      <div class='iframe-container'>
         <iframe scrolling='no' frameborder='0' src="https://editor.p5js.org/cameron.nelson/embed/wW86d-ioc"></iframe>
-    </div>
+      </div>
     </div>
 
   </div>
-</div>
-
-<div class='footer'>
-  <p id='copyright'></p>
-  <script>
-  (function getDate() {
-    var d = new Date();
-    document.getElementById('copyright').innerHTML = '&copy; ' + d;
-  })()
-  </script>
-</div>
+  <footer-component></footer-component>
 
 </body>
 

@@ -1,69 +1,46 @@
 <!DOCTYPE html>
-<html lang='eng'>
+<html lang = 'eng'>
+<meta charset='utf-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <title>Modulus Mandalas</title>
-  <link href='../index.css' rel='stylesheet' type='text/css'/>
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet"><script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-  <style type="text/css">
-      .mobileHide { display: inline;}
-      /* Smartphone Portrait and Landscape */
-      @media only screen
-      and (min-device-width : 320px)
-      and (max-device-width : 480px){ .mobileHide { display: none;}}
-  </style>
-  <style type="text/css">
-      .mobileShow { display: none;}
-      /* Smartphone Portrait and Landscape */
-      @media only screen
-      and (min-device-width : 320px)
-      and (max-device-width : 480px){ .mobileShow { display: inline;}}
-  </style>
+    <title>Modulus Mandalas</title>
 </head>
+<script src="/components/header.js" type="text/javascript" defer></script>
+<script src="/components/footer.js" type="text/javascript" defer></script>
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<link href='/index.css' rel='stylesheet' type='text/css'/>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
 <body>
 
-  <div class='header'>
-    <ul class='menubar'>
-      <li><a href='../index.html'><h1>Home</h1></a></li>
-      <li><a href='../music.html'>Music</a></li>
-      <li><a href='../about.html'>About</a></li>
-      <li><a href='mailto:cn339@cornell.edu'>Contact</a></li>
-    </ul>
-  </div>
+  <header-component></header-component>
+  <div class="container page">
 
-<div class='main'>
-  <div class='article'>
-    <div class='mobileHide'>
-        <div class='iframe-container'>
-          <iframe scrolling='no' frameborder='0' src='https://editor.p5js.org/cameron.nelson/embed/-5_l_a8El'></iframe>
-        </div>
-    </div>
-    <div class='mobileShow'>
-        <img src='../images/mandala/34.png' />
+    <div class='card'>
+      <div class='iframe-container'>
+        <iframe frameborder="0" src="https://www.shadertoy.com/embed/NtGGWh?gui=false&t=10&paused=false&muted=false" allowfullscreen></iframe>
+        <!-- <iframe scrolling='no' frameborder='no' src="https://editor.p5js.org/cameron.nelson/full/-5_l_a8El"></iframe> -->
+      </div>
     </div>
 
-    <h3>Modulus Mandalas</h3>
-    <p>These patterns are each just a part of an infinite tapestry, and in turn each tapestry is part of an infinite abstract space of tapestries.
-    They are created by an exceedingly simple generative rule, essentially a binary test of whether pixel coordinates obey the equation </br></br>
-    (x*y) % t*n % t = 0 </br></br>
-    Although the patterns are beautiful, the fact that one simple equation generates such variety is perhaps even more beautiful.</p>
+    <div class='card'>
+      <div class='card-body'>
+        <h3 class='card-title'>Modulus Mandalas</h3>
+        <p class='card-text'>
+          These patterns are each just a part of an infinite tapestry, and in turn each tapestry is part of an infinite abstract space of tapestries.
+          They are created by an exceedingly simple generative rule, essentially a binary test of whether pixel coordinates obey the equation 
+          </br></br>
+          (x*y) % t*n % t = 0
+          </br></br>
+          Although the patterns are beautiful, the fact that one simple equation generates such variety is perhaps even more beautiful.
+        </p>
+      </div>
+    </div>
+
   </div>
-
-</div>
-
-<div class='footer'>
-  <p id='copyright'></p>
-  <script>
-  (function getDate() {
-    var d = new Date();
-    document.getElementById('copyright').innerHTML = '&copy; ' + d;
-  })()
-  </script>
-</div>
+  <footer-component></footer-component>
 
 </body>
 

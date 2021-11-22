@@ -1,66 +1,41 @@
 <!DOCTYPE html>
-<html lang='eng'>
+<html lang = 'eng'>
+<meta charset='utf-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <title>Dominant Void</title>
-  <link href='../index.css' rel='stylesheet' type='text/css'/>
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet"><script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <title>Booleans</title>
 </head>
+<script src="/components/header.js" type="text/javascript" defer></script>
+<script src="/components/footer.js" type="text/javascript" defer></script>
+<script src="/components/gallery.js" type="text/javascript" defer></script>
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<link href='/index.css' rel='stylesheet' type='text/css'/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 <body>
 
-  <div class='header'>
-    <ul class='menubar'>
-      <li><a href='../index.html'><h1>Home</h1></a></li>
-      <li><a href='../music.html'>Music</a></li>
-      <li><a href='../about.html'>About</a></li>
-      <li><a href='mailto:cn339@cornell.edu'>Contact</a></li>
-    </ul>
-  </div>
+    <header-component></header-component>
+    
+    <div class='container'>
 
-<div class='main'>
+      <gallery-component src='/images/voids' title='Voids' 
+      text='The Dominant Void was a brief, warmup assignment for my senior fall studio with Turner Brooks. The object was to use about a dozen wooden furring strips, as our only materials, to demarcate a space that feels more tangible even than the solid boundary that defines it.
+      As I find that our minds are always wanting to extend curves that we see around us, I chose to cut thin lathes from my initally rigid furring strips and then glue-laminate them in curves, which I connected with a kind of finger joint according to a few simple rules I laid out for myself:
+      
+      1. Any two joining strips had to connect at a right angle, and
+      
+      2. They had to have the same direction of curvature at the point of their meeting
+      
+      Shown here are some of the paper maquettes I used to explore possible designs for this sculpture.
+      '></gallery-component>
+      
+    </div>
 
-  <div class='gallery'>
-    <a data-fancybox='gallery' href='../images/voids/1.jpg'><img src='../images/voids/1.jpg' /></a>
-    <a data-fancybox='gallery' href='../images/voids/2.jpg'><img src='../images/voids/2.jpg' /></a>
-    <a data-fancybox='gallery' href='../images/voids/3.jpg'><img src='../images/voids/3.jpg' /></a>
-    <a data-fancybox='gallery' href='../images/voids/4.jpg'><img src='../images/voids/4.jpg' /></a>
-    <a data-fancybox='gallery' href='../images/voids/5.jpg'><img src='../images/voids/5.jpg' /></a>
-    <a data-fancybox='gallery' href='../images/voids/6.jpg'><img src='../images/voids/6.jpg' /></a>
-    <a data-fancybox='gallery' href='../images/voids/7.jpg'><img src='../images/voids/7.jpg' /></a>
-    <a data-fancybox='gallery' href='../images/voids/8.jpg'><img src='../images/voids/8.jpg' /></a>
-    <a data-fancybox='gallery' href='../images/voids/9.jpg'><img src='../images/voids/9.jpg' /></a>
-    <a data-fancybox='gallery' href='../images/voids/10.jpg'><img src='../images/voids/10.jpg' /></a>
-    <a data-fancybox='gallery' href='../images/voids/11.jpg'><img src='../images/voids/11.jpg' /></a>
-    <a data-fancybox='gallery' href='../images/voids/12.jpg'><img src='../images/voids/12.jpg' /></a>
-  </div>
-
-  <div class='gallery_description'>
-    <h3>Voids</h3>
-    The Dominant Void was a brief, warmup assignment for my senior fall studio with Turner Brooks. The object was to use about a dozen wooden furring strips, as our only materials, to demarcate a space that feels more tangible even than the solid boundary that defines it.
-    As I find that our minds are always wanting to extend curves that we see around us, I chose to cut thin lathes from my initally rigid furring strips and then glue-laminate them in curves, which I connected with a kind of finger joint according to a few simple rules I laid out for myself:
-    </br></br>
-    1. Any two joining strips had to connect at a right angle, and
-    </br></br>
-    2. They had to have the same direction of curvature at the point of their meeting
-    </br></br>
-    Shown here are some of the paper maquettes I used to explore possible designs for this sculpture.
-  </div>
-
-</div>
-
-<div class='footer'>
-  <p id='copyright'></p>
-  <script>
-  (function getDate() {
-    var d = new Date();
-    document.getElementById('copyright').innerHTML = '&copy; ' + d;
-  })()
-  </script>
-</div>
+    <footer-component></footer-component>
 
 </body>
 

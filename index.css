@@ -21,8 +21,12 @@ body {
 }
 
 a {
-    text-decoration: none;
+	text-decoration: underline;
     color: black;
+}
+
+.menubar a {
+	text-decoration: none;
 }
 
 nav {
@@ -38,6 +42,10 @@ nav {
 .card-columns {
 	column-gap: 3rem;
 }
+
+.card-columns .card:last-child {
+	margin-bottom: 0.76rem;
+  }
 
 @media (min-width: 576px) {
     .card-columns {
@@ -66,7 +74,7 @@ nav {
 .card {
     border-radius: 0;
     border: 1px solid gray;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.1s;
 	margin-top: 2rem;
 }
 
@@ -110,7 +118,7 @@ nav {
 	text-align: justify;
 }
 
-p,h1,h2,h3,h4,h5,h6,a {
+p,h1,h2,h3,h4,h5,h6 {
 	color: gray;
 	overflow-wrap: break-word;
 	text-decoration: none;

@@ -62,7 +62,7 @@
 
             const lamp = new BABYLON.PointLight("lamp", camera.position, scene);
             lamp.range = 100.0;
-            lamp.intensity = 30.0;
+            lamp.intensity = 1.0;
 
             // Fog
             scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
@@ -76,7 +76,7 @@
             bwMaterial.ambientColor = new BABYLON.Color3.Black;
 
             // Level geometry
-            const level = BABYLON.SceneLoader.ImportMeshAsync("", "/models/", "level1.obj").then(function (result) {
+            const level = BABYLON.SceneLoader.ImportMeshAsync("", "/models/babylon/", "level1.obj").then(function (result) {
                 for(var i=0; i<result.meshes.length; ++i) {
                     result.meshes[i].checkCollisions = true;
                     result.meshes[i].applyGravity = false;

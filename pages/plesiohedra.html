@@ -1,49 +1,73 @@
 <!DOCTYPE html>
-<html lang='eng'>
+<html lang = 'eng'>
+<meta charset='utf-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <title>Designing Plesiohedra</title>
-  <link href='../index.css' rel='stylesheet' type='text/css'/>
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet">
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <title>Plesiohedra</title>
 </head>
+<script src="/components/header.js" type="text/javascript" defer></script>
+<script src="/components/footer.js" type="text/javascript" defer></script>
+<script src="/components/gallery.js" type="text/javascript" defer></script>
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<link href='/index.css' rel='stylesheet' type='text/css'/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 <body>
 
-  <div class='header'>
-    <ul class='menubar'>
-      <li><a href='../index.html'><h1>Home</h1></a></li>
-      <li><a href='../music.html'>Music</a></li>
-      <li><a href='../about.html'>About</a></li>
-      <li><a href='mailto:cn339@cornell.edu'>Contact</a></li>
-    </ul>
+  <header-component></header-component>
+  <div class="container page">
+
+    <div class='card'>
+      <div class='card-body'>
+        <h3 class='card-title'>Designing Plesiohedra</h3>
+        <p class='card-text'>
+          A plesiohedron, defined as the Voronoi cell of a symmetric Delone set, is by construction a polyhedron that tesselates space isohedrally, with each cell translationally symmetric to every other.
+          I parametrized this definition in Grasshopper design software, allowing me to sample arbitrary points from the phase space and even construct continuous trajectories through it. 
+          The animation shown here visualizes a point moving along such a path through the phase space. 
+          As such, if you were to freeze the animation, no matter what frame it stopped on, the polyhedron depicted would tile all of space.
+          This method is far from generating all possible polyhedra that can tile space, nor is the construction from a Delone set necessarily the only way to tile any particular plesiohedron. 
+          Take bricks, for example, which, when they are stacked in alternating rows, contain instances of exactly two edges meeting, unlike the Voronoi diagram of a Delone set whose edges always meet in three or more.
+        </p>
+      </div>
+    </div>
+
+    <div class='card'>
+      <img class='card-img-top' src='/images/plesiohedra/assembly.png'/>
+      <div class='card-body'>
+        <p class='card-text'>An assembly of space-filling plesiohedra</p>
+      </div>
+    </div>
+
+    <div class='card'>
+      <img class='card-img-top' src='/images/plesiohedra/plesiohedra.gif'/>
+      <div class='card-body'>
+        <p class='card-text'>A continuous walk through the parameter space of plesiohedra</p>
+      </div>
+    </div>
+
+    <div class='card'>
+      <div class='card-body'>
+        <p class='card-text'>
+          Another class of polyhedra, "polycubes," is formed of identical cubes affixed face to face.
+          Packing problems of polycubes include those of pentacubes (3d analogues of pentominoes), <a href='https://en.wikipedia.org/wiki/Tripod_packing'>tripods</a>, and popular puzzles like the Soma Cube.
+          While playing around with virtual blocks, I found out the following by construction:
+          If you take a cube, and any n of its six faces, and afix identical cubes to those faces, then the union of these cubes is a polyhedron that can be stacked to fill space without gaps or overlaps.
+          In other terms, this is the family of polycubes whose dual graphs are trees with a depth of one or less. 
+          While reading up on this family of space-tiling shapes I came across <a href='https://circlesandtrianglesblog.wordpress.com/2016/06/06/three-dimensional-tessellation/'>this demonstration</a> of the case when n=6, with very nicely rendered animations of the assembly.
+          I find these shapes especially fascinating for the satisfying ways they interlock. 
+          Each unique kind of branched cube, up to symmetry, is shown here, in a 6x6x6 tiling.
+        </p>
+      </div>
+    </div>
+
+    <gallery-component src='/images/branchedcubes'></gallery-component>
+
   </div>
-
-<div class='main'>
-  <div class='article'>
-      <h3>Designing Plesiohedra</h3>
-      <p>A plesiohedron, defined as the Voronoi cell of a symmetric Delone set, is by construction a polyhedron that tesselates space isohedrally, with each cell translationally symmetric to every other.
-      I parametrized this definition in Grasshopper design software, allowing me to sample arbitrary points from the phase space and even construct continuous trajectories through it. The animation shown here visualizes a point moving along such a path through the phase space. As such, if you were to freeze the animation, no matter what frame it stopped on, the polyhedron depicted would tile all of space.
-      This method is far from generating all possible polyhedra that can tile space, nor is the construction from a Delone set necessarily the only way to tile any particular plesiohedron. Take bricks, for example, which, when they are stacked in alternating rows, contain instances of exactly two edges meeting, unlike the Voronoi diagram of a Delone set whose edges always meet in three or more.
-      A point of further research will be aperiodic Delone sets, concave stereohedra, and exotic constructions of symmetric Delone sets.</p>
-    <img src='../images/plesiohedra/assembly.png'/>
-    <p>An assembly of space-filling plesiohedra</p>
-    <img src='../images/plesiohedra/plesiohedra.gif'/>
-    <p>A continuous walk through the parameter space of plesiohedra</p>
-
-  </div>
-</div>
-
-<div class='footer'>
-  <p id='copyright'></p>
-  <script>
-  (function getDate() {
-    var d = new Date();
-    document.getElementById('copyright').innerHTML = '&copy; ' + d;
-  })()
-  </script>
-</div>
+  <footer-component></footer-component>
 
 </body>
 

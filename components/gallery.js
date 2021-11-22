@@ -22,12 +22,12 @@ class Gallery extends HTMLElement {
                 url : src,
                 success: function (data) {
 
-                    if((title != null) || (description != null)) {
+                    if((title != null) || (text != null)) {
                         var title_card = `
                         <div class='card'>
                             <div class='card-body' style='text-align:justify'>`
-                            + (title!=null ? `<div class='card-title'>` + title + `</div>`:'')
-                            + (text!=null ? `<div class='card-text'>` + text + `</div>`:'')
+                            + (title != null ? `<div class='card-title'>` + title + `</div>`:'')
+                            + (text != null ? `<div class='card-text'>` + text + `</div>`:'')
                             + `</div>
                         `;
                         $("#gallery_header").append( title_card );
@@ -36,7 +36,7 @@ class Gallery extends HTMLElement {
                     $(data).find("a").attr("href", function (i, val) {
                         if( val.match(/\.(jpe?g|png|gif)$/) ) {
                             var card = `
-                            <div class='card'>
+                            <div class='card clickable'>
                             <a data-fancybox='gallery' href='`+ val + `'>
                                 <img class='card-img-top' src='`+ val + `'/>
                             </a>
