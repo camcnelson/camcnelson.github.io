@@ -1,229 +1,109 @@
 <!DOCTYPE html>
-<html lang = 'eng'>
-<meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <head>
-    <title>Home</title>
-</head>
-<script src='/components/header.js' type='text/javascript' defer></script>
-<script src='/components/footer.js' type='text/javascript' defer></script>
-<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:300' rel='stylesheet'>
-<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' integrity='sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z' crossorigin='anonymous'>
-<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' integrity='sha384-B4gt1jrGC7Jh3AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV' crossorigin='anonymous'></script>
-<link href='/index.css' rel='stylesheet' type='text/css'/>
-<script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous'></script>
 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Babylon Template</title>
+
+    <style>
+        html, body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #renderCanvas {
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+    </style>
+
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+
+</head>
+<html>
 <body>
 
-    <header-component></header-component>
-    <div class='container' style='max-width: 100%;'>
+    <canvas id="renderCanvas" touch-action="none"></canvas> <!-- touch-action="none" for best results from PEP -->
 
-        <div class='card-columns'>
+    <script>
+        const canvas = document.getElementById("renderCanvas"); // Get the canvas element
+        const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
 
-            <a href='/pages/zoetrope.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/zoetrope/IFITWASEASYITWOULDNTBEFUN.jpg'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Zoetrope Font</h3>
-                        <p class='card-text'>Typeface Design</p>
-                    </div>
-                </div>
-            </a>
+        const createScene = function() {
+            const scene = new BABYLON.Scene(engine);
+            scene.clearColor = new BABYLON.Color3(0.95,0.9,0.9); 
+            scene.gravity = new BABYLON.Vector3(0, -0.5, 0);
+            scene.collisionsEnabled = true;
 
-            <a href='/pages/rushnyky.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/rushnyky/rushnyk.png'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Rushnyky</h3>
-                        <p class='card-text'>Javascript, Embroidery</p>
-                    </div>
-                </div>
-            </a>
+            var camera = new BABYLON.FreeCamera("FreeCamera", new BABYLON.Vector3(0, 10, 0), scene);
+            camera.attachControl(canvas, true);
+            // camera.speed = 3;
+            // camera.inertia = 0.9;
+            camera.keysUp.push(87);    //W              
+            camera.keysDown.push(83)   //D              
+            camera.keysLeft.push(65);  //A              
+            camera.keysRight.push(68); //S
+            camera.ellipsoid = new BABYLON.Vector3(1,1,1);
+            camera.checkCollisions = true;
+            camera.applyGravity = true;
+            camera._needMoveForGravity = false;
 
-            <a href='/pages/schelling.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/schelling/rows 1.png'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Schelling Patterns</h3>
-                        <p class='card-text'>Agent-based Models</p>
-                    </div>
-                </div>
-            </a>
+            canvas.addEventListener('click', () => { canvas.requestPointerLock(); });
 
-            <a href='/pages/ncube.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/ncube/pythonVersion.png'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>N-Cube</h3>
-                        <p class='card-text'>Python, Javascript</p>
-                    </div>
-                </div>
-            </a>
+            const sun = new BABYLON.HemisphericLight("sun", new BABYLON.Vector3(1, 1, 0));
+            // sun.diffuse = new BABYLON.Color3(0.5,0.5,0.1);
+            // sun.specular = new BABYLON.Color3(0.5,0.5,0.1);
+            sun.intensity = 0.1;
 
-            <a href='/pages/ellipse.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/ellipse/construction.png'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Ellipse Construction</h3>
-                        <p class='card-text'>Javascript</p>
-                    </div>
-                </div>
-            </a>
+            // const lamp = new BABYLON.PointLight("lamp", camera.position, scene);
+            // lamp.range = 100.0;
+            // lamp.intensity = 30.0;
 
-            <a href='/pages/sg2018.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/sg2018/pointcloud.jpg'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Smartgeometry</h3>
-                        <p class='card-text'>Photogrammetry, VR</p>
-                    </div>
-                </div>
-            </a>
+            // Fog
+            scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
+            scene.fogColor = new BABYLON.Color3(1,0.9,0.9); 
+            scene.fogDensity = 0.03;
 
-            <a href='/pages/mandala.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/mandala/display.png'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Modulus Pattern</h3>
-                        <p class='card-text'>Javascript, GLSL</p>
-                    </div>
-                </div>
-            </a>
+            var bwMaterial = new BABYLON.StandardMaterial("bwMaterial", scene);
+            bwMaterial.diffuseColor = new BABYLON.Color3(1.1,1.0,1.0);
+            bwMaterial.specularColor = new BABYLON.Color3.Black;
+            bwMaterial.emissiveColor = new BABYLON.Color3(0.7);
+            bwMaterial.ambientColor = new BABYLON.Color3.White;
 
-            <a href='/pages/plesiohedra.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/plesiohedra/assembly.png'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Plesiohedra</h3>
-                        <p class='card-text'>Packing Problems</p>
-                    </div>
-                </div>
-            </a>
+            // Level geometry
+            const level = BABYLON.SceneLoader.ImportMeshAsync("", "./", "pink.obj").then(function (result) {
+                for(var i=0; i<result.meshes.length; ++i) {
+                    result.meshes[i].checkCollisions = true;
+                    result.meshes[i].applyGravity = false;
+                    result.meshes[i].enableEdgesRendering(0.99); 
+                    result.meshes[i].edgesWidth = 10.0;
+                    result.meshes[i].edgesColor = new BABYLON.Color4(1, 1, 1, 1);
+                    result.meshes[i].material = bwMaterial;
+                }
+            });
 
-            <a href='/pages/voids.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/voids/3.jpg'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Dominant Void</h3>
-                        <p class='card-text'>Paper, Wood</p>
-                    </div>
-                </div>
-            </a>
+            scene.registerBeforeRender(function() {
+                // lamp.position = camera.position;
+            });
 
-            <a href='/pages/ryoanji.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/ryoanji/3 obstacles.png'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Ryoanji</h3>
-                        <p class='card-text'>Isovists, Rock Gardens</p>
-                    </div>
-                </div>
-            </a>
+            return scene;
+        };
 
-            <a href='/pages/erosion.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/erosion/after w mesh.jpg'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Erosion Algorithm</h3>
-                        <p class='card-text'>Javascript, 3d</p>
-                    </div>
-                </div>
-            </a>
+        const scene = createScene();
+        
+        engine.runRenderLoop(function () {
+                scene.render();
+        });
 
-            <a href='/pages/boolean.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/boolean/12.jpg'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Booleans</h3>
-                        <p class='card-text'>Rhinoceros 3d</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href='/pages/babylon.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/babylon/babylonjs.jpg'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>BabylonJS Testground</h3>
-                        <p class='card-text'>Javascript, 3d</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href='/pages/tetrapods.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/tetrapods/14.jpg'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Tetrapods</h3>
-                        <p class='card-text'>Rhinoceros 3d</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href='/pages/asphalt.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/asphalt/glyph16.png'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Road Glyphs</h3>
-                        <p class='card-text'>Photography</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href='/pages/lossy.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/lossy/DCT.png'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Lossy JPEG</h3>
-                        <p class='card-text'>Javascript, JPEG</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href='/pages/folds.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/folds/23.png'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>No-sew Folds</h3>
-                        <p class='card-text'>Rhinoceros 3d</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href='/pages/shelter.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/shelter/gallery/geo abstract.jpg'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Youth Shelter</h3>
-                        <p class='card-text'>Undergraduate Studio</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href='/pages/weaver.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/weaver/gallery/iso.jpg'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Weaver's Cabin</h3>
-                        <p class='card-text'>Undergraduate Studio</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href='/pages/polybrick.html'>
-                <div class='card clickable'>
-                    <img class='card-img-top' src='/images/polybrick/sub arch model.jpg'>
-                    <div class='card-body'>
-                        <h3 class='card-title'>Polybrick</h3>
-                        <p class='card-text'>Topology Optimization</p>
-                    </div>
-                </div>
-            </a>
-
-        </div>
-
-    </div>
-    <footer-component></footer-component>
+        window.addEventListener("resize", function () {
+                engine.resize();
+        });
+    </script>
 
 </body>
 </html>
