@@ -1,0 +1,32 @@
+
+p, a, h1, h2, h3, h4, h5, h6 {
+	font-family: 'Source Code Pro', monospace;
+	color: gainsboro;
+}
+
+.container {
+	margin:auto;
+	text-align: center;
+}
+
+.card-columns {
+	column-count: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.card {
+	display: block;
+	margin: 2rem;
+	margin-bottom: 0;
+	max-width: 200px;
+}
+
+.card-img-top {
+	max-width: 100%;
+	border: 3px solid gainsboro;
+	/* -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); */
+}
+

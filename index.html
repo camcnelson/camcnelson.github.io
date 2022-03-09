@@ -1,109 +1,67 @@
 <!DOCTYPE html>
+<html lang = 'eng'>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <head>
-
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Babylon Template</title>
-
-    <style>
-        html, body {
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        #renderCanvas {
-            width: 100%;
-            height: 100%;
-            touch-action: none;
-        }
-    </style>
-
-    <script src="https://cdn.babylonjs.com/babylon.js"></script>
-    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
-
+    <title>Terraria</title>
 </head>
-<html>
+
+<!-- Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:300' rel='stylesheet'>
+
+<!-- Custom CSS -->
+<link href='/index.css' rel='stylesheet' type='text/css'/>
+
 <body>
 
-    <canvas id="renderCanvas" touch-action="none"></canvas> <!-- touch-action="none" for best results from PEP -->
+    <div class='container'>
 
-    <script>
-        const canvas = document.getElementById("renderCanvas"); // Get the canvas element
-        const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
+        <h1> Terraria </h1>
 
-        const createScene = function() {
-            const scene = new BABYLON.Scene(engine);
-            scene.clearColor = new BABYLON.Color3(0.95,0.9,0.9); 
-            scene.gravity = new BABYLON.Vector3(0, -0.5, 0);
-            scene.collisionsEnabled = true;
+        <div class='card-columns'>
 
-            var camera = new BABYLON.FreeCamera("FreeCamera", new BABYLON.Vector3(0, 10, 0), scene);
-            camera.attachControl(canvas, true);
-            // camera.speed = 3;
-            // camera.inertia = 0.9;
-            camera.keysUp.push(87);    //W              
-            camera.keysDown.push(83)   //D              
-            camera.keysLeft.push(65);  //A              
-            camera.keysRight.push(68); //S
-            camera.ellipsoid = new BABYLON.Vector3(1,1,1);
-            camera.checkCollisions = true;
-            camera.applyGravity = true;
-            camera._needMoveForGravity = false;
+            <a href='/terraria/pink/pink.html'>
+                <div class='card'>
+                    <img class='card-img-top' src='/terraria/pink/pinkscape2.jpg'>
+                </div>
+            </a>
 
-            canvas.addEventListener('click', () => { canvas.requestPointerLock(); });
+            <a href='/terraria/pink/pink.html'>
+                <div class='card'>
+                    <img class='card-img-top' src='/terraria/pink/pinkscape1.jpg'>
+                </div>
+            </a>
 
-            const sun = new BABYLON.HemisphericLight("sun", new BABYLON.Vector3(1, 1, 0));
-            // sun.diffuse = new BABYLON.Color3(0.5,0.5,0.1);
-            // sun.specular = new BABYLON.Color3(0.5,0.5,0.1);
-            sun.intensity = 0.1;
 
-            // const lamp = new BABYLON.PointLight("lamp", camera.position, scene);
-            // lamp.range = 100.0;
-            // lamp.intensity = 30.0;
+            <a href='/terraria/pink/pink.html'>
+                <div class='card'>
+                    <img class='card-img-top' src='/terraria/pink/pinkscape1.jpg'>
+                </div>
+            </a>
+            <a href='/terraria/pink/pink.html'>
+                <div class='card'>
+                    <img class='card-img-top' src='/terraria/pink/pinkscape1.jpg'>
+                </div>
+            </a>
+            <a href='/terraria/pink/pink.html'>
+                <div class='card'>
+                    <img class='card-img-top' src='/terraria/pink/pinkscape1.jpg'>
+                </div>
+            </a>
+            <a href='/terraria/pink/pink.html'>
+                <div class='card'>
+                    <img class='card-img-top' src='/terraria/pink/pinkscape1.jpg'>
+                </div>
+            </a>
 
-            // Fog
-            scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
-            scene.fogColor = new BABYLON.Color3(1,0.9,0.9); 
-            scene.fogDensity = 0.03;
+        </div>
 
-            var bwMaterial = new BABYLON.StandardMaterial("bwMaterial", scene);
-            bwMaterial.diffuseColor = new BABYLON.Color3(1.1,1.0,1.0);
-            bwMaterial.specularColor = new BABYLON.Color3.Black;
-            bwMaterial.emissiveColor = new BABYLON.Color3(0.7);
-            bwMaterial.ambientColor = new BABYLON.Color3.White;
+    </div>
 
-            // Level geometry
-            const level = BABYLON.SceneLoader.ImportMeshAsync("", "./", "pink.obj").then(function (result) {
-                for(var i=0; i<result.meshes.length; ++i) {
-                    result.meshes[i].checkCollisions = true;
-                    result.meshes[i].applyGravity = false;
-                    result.meshes[i].enableEdgesRendering(0.99); 
-                    result.meshes[i].edgesWidth = 10.0;
-                    result.meshes[i].edgesColor = new BABYLON.Color4(1, 1, 1, 1);
-                    result.meshes[i].material = bwMaterial;
-                }
-            });
-
-            scene.registerBeforeRender(function() {
-                // lamp.position = camera.position;
-            });
-
-            return scene;
-        };
-
-        const scene = createScene();
-        
-        engine.runRenderLoop(function () {
-                scene.render();
-        });
-
-        window.addEventListener("resize", function () {
-                engine.resize();
-        });
-    </script>
+    <!-- jquery, js popper, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>
