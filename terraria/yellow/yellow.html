@@ -2,7 +2,7 @@
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Pink</title>
+    <title>Yellow</title>
 
     <style>
         html, body {
@@ -36,7 +36,7 @@
 
         const createScene = function() {
             const scene = new BABYLON.Scene(engine);
-            scene.clearColor = new BABYLON.Color3.FromHexString("#f7c0b7"); 
+            scene.clearColor = new BABYLON.Color3.FromHexString("#e0a600"); 
             scene.gravity = new BABYLON.Vector3(0, -0.42, 0);
             scene.collisionsEnabled = true;
 
@@ -56,13 +56,13 @@
             canvas.addEventListener('click', () => { canvas.requestPointerLock(); });
 
             const sun = new BABYLON.HemisphericLight("sun", new BABYLON.Vector3(1, 1, 0));
-            sun.diffuse = new BABYLON.Color3.FromHexString("#c7c8b8");
-            sun.specular = new BABYLON.Color3.FromHexString("#c7c8b8");
-            sun.intensity = 0.3;
+            sun.diffuse = new BABYLON.Color3.FromHexString("#98b0c6");
+            sun.specular = new BABYLON.Color3.FromHexString("#98b0c6");
+            sun.intensity = 0.9;
 
             // Fog
             scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
-            scene.fogColor = new BABYLON.Color3.FromHexString("#c7c8b8"); 
+            scene.fogColor = new BABYLON.Color3.FromHexString("#98b0c6"); 
             scene.fogDensity = 0.03;
 
             var material = new BABYLON.StandardMaterial("material", scene);
@@ -70,7 +70,7 @@
             material.specularColor = new BABYLON.Color3.Black;
 
             // Level geometry
-            const level = BABYLON.SceneLoader.ImportMeshAsync("", "./", "pink.obj").then(function (result) {
+            const level = BABYLON.SceneLoader.ImportMeshAsync("", "./", "yellow.obj").then(function (result) {
                 for(var i=0; i<result.meshes.length; ++i) {
                     result.meshes[i].checkCollisions = true;
                     result.meshes[i].applyGravity = false;
