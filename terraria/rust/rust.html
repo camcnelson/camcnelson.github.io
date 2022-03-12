@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Rust</title>
+
+    <style>
+        html, body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #renderCanvas {
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+    </style>
+
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+
+</head>
+<html>
+<body>
+
+    <canvas id="renderCanvas" touch-action="none"></canvas> <!-- touch-action="none" for best results from PEP -->
+
+    <script>
+        const canvas = document.getElementById("renderCanvas"); // Get the canvas element
+        const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
+
+        const createScene = function() {
+            const scene = new BABYLON.Scene(engine);
+            scene.clearColor = new BABYLON.Color3.FromHexString("#c7dbc8"); 
+            scene.gravity = new BABYLON.Vector3(0, -0.42, 0);
+            scene.collisionsEnabled = true;
+
+            var camera = new BABYLON.FreeCamera("FreeCamera", new BABYLON.Vector3(0, 10, 0), scene);
+            camera.attachControl(canvas, true);
+            camera.speed = 1;
+            camera.inertia = 0.9;
+            camera.keysUp.push(87);    //W              
+            camera.keysDown.push(83)   //D              
+            camera.keysLeft.push(65);  //A              
+            camera.keysRight.push(68); //S
+            camera.ellipsoid = new BABYLON.Vector3(1,1,1);
+            camera.checkCollisions = true;
+            camera.applyGravity = true;
+            camera._needMoveForGravity = false;
+
+            canvas.addEventListener('click', () => { canvas.requestPointerLock(); });
+
+            const sun = new BABYLON.HemisphericLight("sun", new BABYLON.Vector3(1, 1, 0));
+            sun.diffuse = new BABYLON.Color3.FromHexString("#847c82");
+            sun.intensity = 1.0;
+
+            // Fog
+            scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
+            scene.fogColor = new BABYLON.Color3.FromHexString("#aa959c"); 
+            scene.fogDensity = 0.01;
+
+            var material = new BABYLON.StandardMaterial("material", scene);
+            material.diffuseColor = new BABYLON.Color3.FromHexString("#b94709");
+            material.specularColor = new BABYLON.Color3.Black;
+
+            // Level geometry
+            const level = BABYLON.SceneLoader.ImportMeshAsync("", "./", "rust.obj").then(function (result) {
+                for(var i=0; i<result.meshes.length; ++i) {
+                    result.meshes[i].checkCollisions = true;
+                    result.meshes[i].applyGravity = false;
+                    result.meshes[i].enableEdgesRendering(0.9); 
+                    result.meshes[i].edgesWidth = 15.0;
+                    result.meshes[i].material = material;
+                    result.meshes[i].edgesColor = new BABYLON.Color4.FromColor3(new BABYLON.Color3.FromHexString("#c7c8b8"));
+                }
+            });
+
+            scene.registerBeforeRender(function() {
+            });
+
+            return scene;
+        };
+
+        const scene = createScene();
+        
+        engine.runRenderLoop(function () {
+                scene.render();
+        });
+
+        window.addEventListener("resize", function () {
+                engine.resize();
+        });
+    </script>
+
+</body>
+</html>
